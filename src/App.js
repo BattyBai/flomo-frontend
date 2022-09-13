@@ -26,6 +26,14 @@ const handleCreate = (addDay) => {
     })
   }
 
+  const handleDelete = (event) => {
+    axios
+      .delete('http://localhost:8000/api/flomo/' + event.target.value)
+      .then((response) => {
+        getFlow()
+      })
+  }
+  
 
 
 useEffect(() => {
@@ -41,6 +49,7 @@ useEffect(() => {
           <div className="flomo">
             {flow.map((day) => {
               return (
+                  <>
                 <div className="day" key={day.id}>
                   <h4>Day: {day.date}</h4>
                   <h5> {day.bloody ? "Bled" : null}</h5>
@@ -59,6 +68,9 @@ useEffect(() => {
                   <h5> {day.aches ? "Body aches" : null}</h5>
                   <h5> {day.patriarchy ? "Under the thumb of the Patriarchy" : null}</h5>
                 </div>
+                <button onClick={handleDelete} value={day.id}> Delete Day</button>
+
+                </>
               )
             })}
           </div>
