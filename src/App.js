@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import Add from './components/Add'
 
 const App = () => {
   let [flow, setFlow] = useState([])
@@ -15,6 +16,17 @@ const getFlow = () => {
     .catch((error) => console.error(error))
   }
 
+const handleCreate = (addDay) => {
+  axios.post('http://localhost:8000/api/flomo', addDay)
+
+    .then((response) => {
+      console.log(response)
+      setFlow([...flow, response.data])
+    })
+  }
+
+
+
 useEffect(() => {
   getFlow()
 }, [])
@@ -23,13 +35,14 @@ useEffect(() => {
   return(
     <section>
       <h1>Bloody Flomo</h1>
+      <Add handleCreate={handleCreate} />
         <div className="flomo">
           {flow.map((day) => {
             return (
               <div className="day" key={day.id}>
                 <h4>Day: {day.date}</h4>
                 <h5> {day.bloody ? "Bled" : null}</h5>
-                <h5> {day.blood ? day.flow : null}</h5>
+                <h5> {day.bloody ? day.flow : null}</h5>
                 <h4>Symptoms</h4>
                 <h5> {day.cramps ? "Cramps" : null}</h5>
                 <h5> {day.migraine ? "Migraine" : null}</h5>
