@@ -7,7 +7,7 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('')
     const [toggleLogout, setToggleLogout] = useState(false)
     const [currentUser, setCurrentUser] = useState({})
-    
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -57,12 +57,12 @@ const Login = () => {
             }
         })
     }
-    
+
     const handleLogout = () => {
         setCurrentUser({})
         handleToggleLogout()
     }
-    
+
     const handleToggleForm = () => {
         setToggleError(false)
         if(toggleLogin === true) {
@@ -71,7 +71,7 @@ const Login = () => {
             setToggleLogin(true)
         }
     }
-    
+
     const handleToggleLogout = () => {
         if(toggleLogout) {
             setToggleLogout(false)
@@ -83,7 +83,7 @@ const Login = () => {
 
 
   return (
-    
+
     <div className="App" style = {{paddingTop: "150px"}}>
             <div>
             {toggleLogout ?
@@ -123,8 +123,8 @@ const Login = () => {
                 <button onClick={handleToggleForm} className='accountBtn btn btn-outline-primary'>{toggleLogin ? 'New Account?' : 'Login'}</button>
             </div>
             }
-    
-    
+
+
         </div>
         {currentUser.email ?
             <div className='loggedInDiv'>
