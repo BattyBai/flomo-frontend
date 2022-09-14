@@ -97,9 +97,8 @@ useEffect(() => {
                   <h5> {day.fatigue ? "Fatigue" : null}</h5>
                   <h5> {day.aches ? "Body aches" : null}</h5>
                   <h5> {day.patriarchy ? "Under the thumb of the Patriarchy" : null}</h5>
-                </div>
+                </div> 
                 <button onClick={handleDelete} value={day.id}> Delete Day</button>
-
                 </>
               )
             })}
