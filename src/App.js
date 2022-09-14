@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
 import Login from './components/Login'
+import Edit from './components/Edit'
 
 const App = () => {
   let [flow, setFlow] = useState([])
@@ -34,6 +35,14 @@ const handleCreate = (addDay) => {
       })
   }
   
+  const handleUpdate = (editDay) => {
+    axios.put('http://localhost:8000/api/flomo/' + editDay.id, editDay)
+    .then((response) => {
+      setFlow(flow.map((day) => {
+        return day.id !== editDay.id ? day : editDay
+      }))
+    })
+  }
 
 
 useEffect(() => {
@@ -68,6 +77,7 @@ useEffect(() => {
                   <h5> {day.aches ? "Body aches" : null}</h5>
                   <h5> {day.patriarchy ? "Under the thumb of the Patriarchy" : null}</h5>
                 </div> 
+                <Edit handleUpdate={handleUpdate} day={day}/>
                 <button onClick={handleDelete} value={day.id}> Delete Day</button>
                 </>
               )
