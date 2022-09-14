@@ -43,8 +43,9 @@ const Login = () => {
         }
         setEmail('')
         setPassword('')
-        axios.put(`http://localhost:8000/api/useraccount/{userid}`, userObj).then((response) => {
-            if(response.data.email){
+        axios.put(`http://localhost:8000/api/useraccount/login`, userObj).then((response) => {
+            console.log("res", response);
+            if(response.data){
                 console.log(response);
                 setToggleError(false)
                 setErrorMessage('')

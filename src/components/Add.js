@@ -30,7 +30,7 @@ const Add = (props) => {
         </div>
         <label htmlFor="flow">Flow: </label>
         <select name="flow" onChange={handleChange}>
-        <option >Level of flow:</option>
+        <option disabled selected>Select Level of Flow</option>
         <option value="Spotting" >Spotting</option>
         <option value="Light" >Light</option>
         <option value="Medium" >Medium</option>
