@@ -21,7 +21,7 @@ const Add = (props) => {
 
   return (
     <>
-      <form className="new-form" onSubmit={handleSubmit}>
+      <form className="form-control" onSubmit={handleSubmit}>
         <label htmlFor="date">Date: </label>
         <input type="date" name="date" value={day.date} onChange={handleChange}/>
         <div className="form-check">
