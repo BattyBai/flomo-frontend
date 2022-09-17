@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import './/App.css'
 
 const style = {
   position: 'absolute',
@@ -72,18 +73,27 @@ useEffect(() => {
   return(
     <>
     <Login />
-      <section className="container">
-        <h1>Bloody Flomo</h1>
-        <Add handleCreate={handleCreate} />
+      
+        <div className="header">
+          <div className="container">
+        <h1>Flomo</h1>
+        <h2>Never Miss A Period Again!</h2>
+        </div>
+        </div>
+        <div className="container">
+        <div>
+            <Add handleCreate={handleCreate} />
+        </div>
           <div className="flomo">
             {flow.map((day) => {
               return (
-                  <>
-                <div className="card show-card" style={{width: "10rem;"}} key={day.id}>
+                <>
+                <div className="cardflex">
+                <div className="card" style={{width: "18rem", display: "flex"}} key={day.id}>
                   <div className="card-body">
-                  <h5 claslName="card-title">Day: {day.date}</h5>
-                  <h6> {day.bloody ? "Bled" : null}</h6>
-                  <p className="card-text"> {day.bloody ? day.flow : null}</p>
+                    <h6 className="card-title">{day.date}</h6>
+                    {day.bloody ?<h5><b>Flow: </b></h5> : null}
+                  {day.bloody ? <li className="list-group-item">{day.flow}</li> : null} <br/>
                   <h6 className="card-subtitle mb-2 text-muted">Symptoms</h6>
                   <ul className="list-group list-group-flush">
                   {day.cramps ?<li className="list-group-item">Cramps</li> : null}
@@ -100,21 +110,16 @@ useEffect(() => {
                   {day.patriarchy ?<li className="list-group-item">Under the thumb of the Patriarchy</li> : null}
                   </ul>
                   </div>
-                </div> 
-                <Button onClick={handleOpen}>Edit Flow</Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description">
-                    <Edit handleUpdate={handleUpdate} day={day}/>
-                  </Modal>
-                <button className="btn btn-danger" onClick={handleDelete} value={day.id}> Delete Day</button>
+                    
+                </div>
+                <Edit handleUpdate={handleUpdate} day={day}/>
+                <Button className="delete-btn" onClick={handleDelete} value={day.id}> Delete Flow</Button>
+                </div>
                 </>
               )
             })}
           </div>
-      </section>
+      </div>
     </>
   )
 
