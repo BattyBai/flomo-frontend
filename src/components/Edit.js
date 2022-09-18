@@ -19,6 +19,7 @@ const style = {
 
 const Edit = (props) => {
   const [day, setDay] = useState({...props.day})
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -45,7 +46,7 @@ const Edit = (props) => {
                   open={open}
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description">
-        <Box sx={style}>
+        <Box  sx={style}>
               <h5 variant="h6" component="h2" id="modal-modal-title">Edit Flow:</h5>
               <div className="modal-body">
                     <form className="form-control" onSubmit={handleSubmit} >
