@@ -52,16 +52,17 @@ useEffect(() => {
 
   return(
     <>
-        <div className="header">
-          <div className="container">
-        <h1>Flomo</h1>
-        <h2>Never Miss A Period Again!</h2>
-        </div>
-        </div>
+        <header className="header">
+          <div className="container title-bar">
+            <h1>Flomo</h1>
+            <h2>Never Miss A Period Again!</h2>
+          </div>
+          <div className="add-flow-box">
+              <Add handleCreate={handleCreate} />
+          </div>
+        </header>
+        <div className="page-content">
         <div className="container">
-        <div className="add-flow-box">
-            <Add handleCreate={handleCreate} />
-        </div>
           <div className="flomo">
             {flow.map((day) => {
               return (
@@ -96,6 +97,7 @@ useEffect(() => {
               )
             })}
           </div>
+      </div>
       </div>
       <div className="footer">
       <footer id="footer">

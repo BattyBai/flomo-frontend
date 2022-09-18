@@ -1,4 +1,4 @@
-h5, h6 {
+h4, h5, h6 {
   color:rgb(135, 2, 89);
 }
 
@@ -98,6 +98,15 @@ Checkbox {
   outline-color: none !important;
 }
 
+.add {
+  max-height: 3em;
+  text-align: center;
+  align-items: center;
+}
+.add:hover {
+  background-color: white !important;
+  color:rgb(135, 2, 89) !important;
+}
 
 Button {
   background-color:rgb(246, 203, 232) !important;
@@ -108,12 +117,29 @@ Button:hover {
   color: white !important;
 }
 
-.header, .footer {
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: rgb(135, 2, 89);
+  color: white;
+  width: 100vw;
+  padding: 1em;
+  /* z-index: 2; */
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  margin-left: 0;
   background-color: rgb(135, 2, 89);
   color: white;
   width: 100vw;
   margin-left: 0;
-  margin-bottom: 5px;
   padding: 1em;
 }
 
@@ -122,6 +148,10 @@ Button:hover {
   justify-content: right;
 }
 
+footer {
+  margin-bottom: 0;
+  background-color:rgb(135, 2, 89);
+}
 
 Box {
   max-height: 90vh;
