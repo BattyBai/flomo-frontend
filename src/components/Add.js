@@ -53,11 +53,11 @@ const Add = (props) => {
       <form className="form-control" onSubmit={handleSubmit}>
         <div className="form-check">
         <label htmlFor="bloody">Had Flow: </label>
-        <Checkbox  name="bloody" value={day.bloody} onChange={handleChecked}/> </div> 
+        <Checkbox  name="bloody" value={day.bloody} onChange={handleChecked}/> </div>
         <label htmlFor="date"><b>Date of flow: </b> </label>
         <input type="date" name="date" style={{width: '18rem'}} value={day.date} onChange={handleChange}/> <br/>
-        
-        
+
+
         <br/>
         <div>
         <label htmlFor="flow"></label>

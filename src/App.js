@@ -28,7 +28,7 @@ const App = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  
+
 const getFlow = () => {
   axios
     .get('http://localhost:8000/api/flomo')
@@ -73,7 +73,7 @@ useEffect(() => {
   return(
     <>
     <Login />
-      
+
         <div className="header">
           <div className="container">
         <h1>Flomo</h1>
@@ -87,26 +87,6 @@ useEffect(() => {
           <div className="flomo">
             {flow.map((day) => {
               return (
-<<<<<<< HEAD
-                  <>
-                <div className="day" key={day.id}>
-                  <h4>Day: {day.date}</h4>
-                  <h5> {day.bloody ? "Bled" : null}</h5>
-                  <h5> {day.bloody ? day.flow : null}</h5>
-                  <h4>Symptoms</h4>
-                  <h5> {day.cramps ? "Cramps" : null}</h5>
-                  <h5> {day.migraine ? "Migraine" : null}</h5>
-                  <h5> {day.bloating ? "Bloating" : null}</h5>
-                  <h5> {day.emo ? "Emotional" : null}</h5>
-                  <h5> {day.anger ? "Angry" : null}</h5>
-                  <h5> {day.food ? "Food cravings" : null}</h5>
-                  <h5> {day.sex ? "Sexual craving" : null}</h5>
-                  <h5> {day.nausea ? "Nausea" : null}</h5>
-                  <h5> {day.sore ? "Tender" : null}</h5>
-                  <h5> {day.fatigue ? "Fatigue" : null}</h5>
-                  <h5> {day.aches ? "Body aches" : null}</h5>
-                  <h5> {day.patriarchy ? "Under the thumb of the Patriarchy" : null}</h5>
-=======
                 <>
                 <div className="cardflex">
                 <div className="card" style={{width: "18rem", display: "flex"}} key={day.id}>
@@ -130,8 +110,7 @@ useEffect(() => {
                   {day.patriarchy ?<li className="list-group-item">Under the thumb of the Patriarchy</li> : null}
                   </ul>
                   </div>
-                    
->>>>>>> ed01f942ce286a20feae00a6195848c8579f8709
+
                 </div>
                 <Edit handleUpdate={handleUpdate} day={day}/>
                 <Button className="delete-btn" onClick={handleDelete} value={day.id}> Delete Flow</Button>
