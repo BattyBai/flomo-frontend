@@ -81,40 +81,40 @@ const Edit = (props) => {
                         </div>
                         <div className="form-check">
                         <label htmlFor="anger">Angry: </label>
-                        <Checkbox color="default" type="checkbox" name="anger" defaultChecked={day.anger} onChange={handleChecked}/> 
+                        <Checkbox color="default" type="checkbox" name="anger" defaultChecked={day.anger} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">         
+                        <div className="form-check">
                         <label htmlFor="food">Food Cravings: </label>
                         <Checkbox color="default" type="checkbox" name="food" defaultChecked={day.food} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">              
+                        <div className="form-check">
                         <label htmlFor="sex">Sex Cravings: </label>
-                        <Checkbox color="default" type="checkbox" name="sex" defaultChecked={day.sex} onChange={handleChecked}/> 
+                        <Checkbox color="default" type="checkbox" name="sex" defaultChecked={day.sex} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">         
+                        <div className="form-check">
                         <label htmlFor="nausea">Nauseated: </label>
                         <Checkbox color="default" type="checkbox" name="nausea" defaultChecked={day.nausea} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">             
+                        <div className="form-check">
                         <label htmlFor="sore">Breast Tenderness: </label>
-                        <Checkbox color="default" type="checkbox" name="sore" defaultChecked={day.sore} onChange={handleChecked}/> 
+                        <Checkbox color="default" type="checkbox" name="sore" defaultChecked={day.sore} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">         
+                        <div className="form-check">
                         <label htmlFor="fatigue">Fatigue: </label>
-                        <Checkbox color="default" type="checkbox" name="fatigue" defaultChecked={day.fatigue} onChange={handleChecked}/> 
+                        <Checkbox color="default" type="checkbox" name="fatigue" defaultChecked={day.fatigue} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">            
+                        <div className="form-check">
                         <label htmlFor="aches">Body Aches: </label>
-                        <Checkbox color="default" type="checkbox" name="aches" defaultChecked={day.aches} onChange={handleChecked}/> 
+                        <Checkbox color="default" type="checkbox" name="aches" defaultChecked={day.aches} onChange={handleChecked}/>
                         </div>
-                        <div className="form-check">          
+                        <div className="form-check">
                         <label htmlFor="patriarchy">Under the thumb of the Patriarchy: </label>
-                        <Checkbox color="default" type="checkbox" name="patriarchy" defaultChecked={day.patriarchy} onChange={handleChecked}/> 
-                        </div> 
-                        <div className="button-box">         
+                        <Checkbox color="default" type="checkbox" name="patriarchy" defaultChecked={day.patriarchy} onChange={handleChecked}/>
+                        </div>
+                        <div className="button-box">
                         <input className="btn add-flow" type="submit" value="Update Flow"/>
                         <button className="btn close" onClick={handleClose}>Exit</button>
-                        </div> 
+                        </div>
                     </form>
               </div>
           </Box>

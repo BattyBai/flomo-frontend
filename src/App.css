@@ -2,6 +2,29 @@ h5, h6 {
   color:rgb(135, 2, 89);
 }
 
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#footer-title {
+  text-align: right;
+}
+
+#names-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.footer-text {
+  color: white !important;
+}
+
+
 .flomo {
   display: flex;
   flex-direction: row;
@@ -99,16 +122,6 @@ Button:hover {
   justify-content: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 Box {
   max-height: 90vh;
