@@ -3,6 +3,7 @@ import axios from 'axios'
 import Add from './components/Add'
 import Login from './components/Login'
 import Edit from './components/Edit'
+import Footer from './components/Footer'
 import ReactModal from 'react-modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -28,7 +29,7 @@ const App = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  
+
 const getFlow = () => {
   axios
     .get('http://localhost:8000/api/flomo')
@@ -55,7 +56,7 @@ const handleCreate = (addDay) => {
         getFlow()
       })
   }
-  
+
   const handleUpdate = (editDay) => {
     axios.put('http://localhost:8000/api/flomo/' + editDay.id, editDay)
     .then((response) => {
@@ -73,7 +74,7 @@ useEffect(() => {
   return(
     <>
     <Login />
-      
+
         <div className="header">
           <div className="container">
         <h1>Flomo</h1>
@@ -110,7 +111,7 @@ useEffect(() => {
                   {day.patriarchy ?<li className="list-group-item">Under the thumb of the Patriarchy</li> : null}
                   </ul>
                   </div>
-                    
+
                 </div>
                 <Edit handleUpdate={handleUpdate} day={day}/>
                 <Button className="delete-btn" onClick={handleDelete} value={day.id}> Delete Flow</Button>
@@ -119,6 +120,11 @@ useEffect(() => {
               )
             })}
           </div>
+      </div>
+      <div className="footer">
+      <footer id="footer">
+        <Footer />
+      </footer>
       </div>
     </>
   )
