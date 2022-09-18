@@ -1,12 +1,25 @@
 h5, h6 {
-  color:rgb(170, 50, 128)
+  color:rgb(135, 2, 89);
 }
 
 .flomo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center; 
   padding: 5px;
+  margin: 5px;
+}
+
+.select-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.select-date {
+  display: flex;
+  justify-content: center;
 }
 
 .card-title {
@@ -72,7 +85,7 @@ Button:hover {
   color: white !important;
 }
 
-.header {
+.header, .footer {
   background-color: rgb(135, 2, 89);
   color: white;
   width: 100vw;
@@ -97,4 +110,7 @@ Button:hover {
   color: white;
 }
 
+Box {
+  max-height: 90vh;
+}
 
