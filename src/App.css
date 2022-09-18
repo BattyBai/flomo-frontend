@@ -1,9 +1,5 @@
 h5, h6 {
-  color:rgb(170, 50, 128)
-}
-
-.footer {
-  color:
+  color:rgb(135, 2, 89);
 }
 
 .icon-container {
@@ -28,24 +24,25 @@ h5, h6 {
   color: white !important;
 }
 
-#Joy {
-  align-items: flex-start;
-}
-
-#Isaac {
-
-}
-
-#Liat {
-  align-items: flex-end;
-}
-
 
 .flomo {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center; 
   padding: 5px;
+  margin: 5px;
+}
+
+.select-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.select-date {
+  display: flex;
+  justify-content: center;
 }
 
 .card-title {
@@ -125,13 +122,8 @@ Button:hover {
   justify-content: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+Box {
+  max-height: 90vh;
 }
+

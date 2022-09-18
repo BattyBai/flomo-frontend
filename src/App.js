@@ -1,34 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Add from './components/Add'
-import Login from './components/Login'
 import Edit from './components/Edit'
 import Footer from './components/Footer'
-import ReactModal from 'react-modal';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 import './/App.css'
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 450,
-  bgcolor: 'background.paper',
-  border: '1px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
 
 const App = () => {
   let [flow, setFlow] = useState([])
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
 
 const getFlow = () => {
   axios
@@ -73,8 +52,6 @@ useEffect(() => {
 
   return(
     <>
-    <Login />
-
         <div className="header">
           <div className="container">
         <h1>Flomo</h1>
@@ -111,7 +88,6 @@ useEffect(() => {
                   {day.patriarchy ?<li className="list-group-item">Under the thumb of the Patriarchy</li> : null}
                   </ul>
                   </div>
-
                 </div>
                 <Edit handleUpdate={handleUpdate} day={day}/>
                 <Button className="delete-btn" onClick={handleDelete} value={day.id}> Delete Flow</Button>
