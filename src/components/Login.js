@@ -93,7 +93,7 @@ const Login = () => {
                 {toggleLogin ?
                   //login form
                 <div className="formContainer">
-                    <h1 className='formTitle'>Login Here</h1>
+                    <h1 className='formTitle'>Flomo Login</h1>
                     <form onSubmit={handleLogin} className='inputForm'>
                         <input type='text' placeholder='email' className='textInput' onChange={(event)=> {setEmail(event.target.value)}}/>
                         <input type='password' placeholder='password' className='textInput' onChange={(event)=> {setPassword(event.target.value)}}/>
