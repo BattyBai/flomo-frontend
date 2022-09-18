@@ -2,10 +2,49 @@ h5, h6 {
   color:rgb(170, 50, 128)
 }
 
+.footer {
+  color:
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#footer-title {
+  text-align: right;
+}
+
+#names-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.footer-text {
+  color: white !important;
+}
+
+#Joy {
+  align-items: flex-start;
+}
+
+#Isaac {
+
+}
+
+#Liat {
+  align-items: flex-end;
+}
+
+
 .flomo {
   display: flex;
   flex-direction: row;
-  justify-content: center; 
+  justify-content: center;
   padding: 5px;
 }
 
@@ -72,7 +111,7 @@ Button:hover {
   color: white !important;
 }
 
-.header {
+.header, .footer {
   background-color: rgb(135, 2, 89);
   color: white;
   width: 100vw;
@@ -96,5 +135,3 @@ Button:hover {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-

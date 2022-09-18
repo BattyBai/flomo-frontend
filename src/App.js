@@ -3,6 +3,7 @@ import axios from 'axios'
 import Add from './components/Add'
 import Login from './components/Login'
 import Edit from './components/Edit'
+import Footer from './components/Footer'
 import ReactModal from 'react-modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -119,6 +120,11 @@ useEffect(() => {
               )
             })}
           </div>
+      </div>
+      <div className="footer">
+      <footer id="footer">
+        <Footer />
+      </footer>
       </div>
     </>
   )
