@@ -47,8 +47,8 @@ const Add = (props) => {
     <Button className="btn btn-danger add-flow" onClick={handleOpenX}>Add Flow</Button>
       <Modal open={openX} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
     <Box sx={style}>
-      <Typography id="modal-modal-title" variant="h6" compontent="h2">
-        Add Flow
+      <Typography id="modal-modal-title" variant="h5" compontent="h2">
+        <b>Add Flow</b>
       </Typography>
       <form className="form-control" onSubmit={handleSubmit}>
         <div className="form-check">
@@ -119,8 +119,10 @@ const Add = (props) => {
         <label htmlFor="patriarchy">Under the thumb of the Patriarchy? </label>
         <Checkbox  color="default" type="checkbox" name="patriarchy"  value={day.patriarchy} checked onChange={handleChecked}/>
         </div>
-
+        <div className="button-box">
         <input className="btn add-flow" type="submit"/>
+        <button className="btn close" onClick={handleCloseX}>Exit</button>
+        </div>
       </form>
       </Box>
       </Modal>
