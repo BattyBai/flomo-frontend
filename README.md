@@ -2,13 +2,11 @@
 ### Menstrual Cycle Tracking App  
 
 #### Made by Joy Houser, Liat Paradise and Isaac Pure   
-
-##### Front End Github
-BattyBai/flomo-frontend (github.com)   
-
-##### Back End Github
-BattyBai/flomo_backend (github.com)   
-
+      
+[Front End Github](https://github.com/BattyBai/flomo-frontend)    
+      
+[Back End Github](https://github.com/BattyBai/flomo_backend)     
+     
 ### Approach Taken
 Initially the group focused on creating an app that would incorporate full CRUD functionality on  a basic level, while also serving as a pragmatic solution to a real problem. We settled on a menstrual tracking app since much of the world’s population experiences menstruation.
 We set out to develop the app using a calendar plug-in, which would allow user to view and input menstrual data on specific dates of the month.  The pursuit of calendar functionality was unsuccessfully completed before the project deadline and the decision was made to move on without it. User authorization was also attempted to allow an individual to view their own personal data, but that too was also removed since we could not make it functional.
