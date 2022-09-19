@@ -19,6 +19,8 @@ const style = {
 
 const Edit = (props) => {
   const [day, setDay] = useState({...props.day})
+  const [scroll, setScroll] = React.useState('paper');
+
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -42,7 +44,9 @@ const Edit = (props) => {
   return (
     <>
     <Button onClick={handleOpen}>Edit Flow</Button>
-    <Modal
+    <Modal 
+        onClose={handleClose}
+        scroll={scroll}
                   open={open}
                   aria-labelledby="modal-modal-title"
                   aria-describedby="modal-modal-description">

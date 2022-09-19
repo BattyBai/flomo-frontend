@@ -97,13 +97,9 @@ useEffect(() => {
               )
             })}
           </div>
+        </div>
       </div>
-      </div>
-      <div className="footer">
-      <footer id="footer">
-        <Footer />
-      </footer>
-      </div>
+      <Footer />
     </>
   )
 

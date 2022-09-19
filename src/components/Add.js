@@ -6,6 +6,9 @@ const Add = (props) => {
 
   let emptyDay = {bloody: 'false', date: '', flow: '', cramps: 'false', migraine: 'false', bloating: 'false', emo: 'false', anger: 'false', food: 'false', sex: 'false', nausea: 'false', sore: 'false', fatigue: 'false', aches: 'false', patriarchy: 'true'}
   const [day, setDay] = useState(emptyDay)
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (event) => {
     setDay({ ...day, [event.target.name]: event.target.value })
@@ -18,6 +21,8 @@ const Add = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.handleCreate(day)
+    setDay(emptyDay)
+    handleClose()
   }
 
   return (
@@ -25,7 +30,7 @@ const Add = (props) => {
     <button type="button" class="btn add" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Add Flow
     </button>
-    <div  className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keybaord="false" tabindex="-1" aria-labeledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keybaord="false" tabindex="-1" aria-labeledby="staticBackdropLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
           <div className="modal-header">
@@ -104,7 +109,7 @@ const Add = (props) => {
               <Checkbox  color="default" type="checkbox" name="patriarchy"  value={day.patriarchy} checked onChange={handleChecked}/>
               </div>
             <div className="modal-footer button-box">
-              <button className="btn add-flow" type="submit" data-dismiss="modal">Add Flow</button>
+              <button className="btn add-flow" type="submit">Add Flow</button>
               <button type="button" className="btn" data-bs-dismiss="modal">Close</button>
             </div>
           </form>
