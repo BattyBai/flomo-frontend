@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import Checkbox from '@mui/material/Checkbox';
+
 
 const Add = (props) => {
-  let emptyDay = {bloody: 'false', date: '', flow: '', cramps: 'false', migraine: 'false', bloating: 'false', emo: 'false', anger: 'false', food: 'false', sex: 'false', nausea: 'false', sore: 'false', fatigue: 'false', aches: 'false', patriarchy: 'false'}
+
+  let emptyDay = {bloody: 'false', date: '', flow: '', cramps: 'false', migraine: 'false', bloating: 'false', emo: 'false', anger: 'false', food: 'false', sex: 'false', nausea: 'false', sore: 'false', fatigue: 'false', aches: 'false', patriarchy: 'true'}
   const [day, setDay] = useState(emptyDay)
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (event) => {
     setDay({ ...day, [event.target.name]: event.target.value })
@@ -15,82 +21,102 @@ const Add = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.handleCreate(day)
-
+    setDay(emptyDay)
+    handleClose()
   }
-
 
   return (
     <>
-      <form className="new-form" onSubmit={handleSubmit}>
-        <label htmlFor="date">Date: </label>
-        <input type="date" name="date" value={day.date} onChange={handleChange}/>
-        <div className="form-check">
-        <label htmlFor="bloody">Bleeding?: </label>
-        <input type="checkbox" name="bloody" value={day.bloody} onChange={handleChecked}/>
+    <button type="button" class="btn add" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Add Flow
+    </button>
+    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keybaord="false" tabindex="-1" aria-labeledby="staticBackdropLabel" aria-hidden="true">
+      <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="staticBackdropLabel">Add Flow</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body">
+          <form className="form-control" onSubmit={handleSubmit}>
+              <div className="form-check">
+              <label htmlFor="bloody"><b>Flow: </b></label>
+              <Checkbox color="default" name="bloody" value={day.bloody} onChange={handleChecked}/> </div> 
+                <div className="">
+                  <div className="select-date">
+                  <label htmlFor="date"><b>Date of flow: </b> </label>
+                  <input type="date" name="date" style={{width: '18rem'}} value={day.date} onChange={handleChange}/> <br/>
+                  </div>
+                  <div className="select-box">
+                  <label htmlFor="flow"><b>Level of Flow:</b></label>
+                  <select  className="flow-select" style={{width: '18rem'}} name="flow" onChange={handleChange}>
+                  <option disabled selected>Select Level of Flow:</option>
+                  <option value="Spotting" >Spotting</option>
+                  <option value="Light" >Light</option>
+                  <option value="Medium" >Medium</option>
+                  <option value="Heavy" >Heavy</option>
+                  </select></div> 
+                </div>
+              <br/>
+              <b>Symptoms:</b>
+              <br/>
+              <div className="form-check">
+              <label htmlFor="cramps">Cramps?: </label>
+              <Checkbox color="default" type="checkbox" name="cramps" value={day.cramps} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="migraine">Migraine/Headache?: </label>
+              <Checkbox color="default" type="checkbox" name="migraine" value={day.migraine} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="bloating">Bloating?: </label>
+              <Checkbox color="default" type="checkbox" name="bloating" value={day.bloating} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="emo">Emotionally sensitive?: </label>
+              <Checkbox color="default" type="checkbox" name="emo" value={day.emo} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="anger">Angry?: </label>
+              <Checkbox color="default" type="checkbox" name="anger" value={day.anger} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="food">Food cravings?: </label>
+              <Checkbox color="default" type="checkbox" name="food" value={day.food} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="sex">Sexual cravings?: </label>
+              <Checkbox color="default" type="checkbox" name="sex" value={day.sex} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="nausea">Nauseated?: </label>
+              <Checkbox color="default" type="checkbox" name="nausea" value={day.nausea} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="sore">Breast tenderness?: </label>
+              <Checkbox color="default" type="checkbox" name="sore" value={day.sore} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="fatigue">Fatigue?: </label>
+              <Checkbox color="default" type="checkbox" name="fatigue" value={day.fatigue} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="aches">Body aches?: </label>
+              <Checkbox color="default" type="checkbox" name="aches" value={day.aches} onChange={handleChecked}/>
+              </div>
+              <div className="form-check">
+              <label htmlFor="patriarchy">Under the thumb of the Patriarchy? </label>
+              <Checkbox  color="default" type="checkbox" name="patriarchy"  value={day.patriarchy} checked onChange={handleChecked}/>
+              </div>
+            <div className="modal-footer button-box">
+              <button className="btn add-flow" type="submit">Add Flow</button>
+              <button type="button" className="btn" data-bs-dismiss="modal">Close</button>
+            </div>
+          </form>
         </div>
-        <label htmlFor="flow">Flow: </label>
-        <select name="flow" onChange={handleChange}>
-        <option >Level of flow:</option>
-        <option value="Spotting" >Spotting</option>
-        <option value="Light" >Light</option>
-        <option value="Medium" >Medium</option>
-        <option value="Heavy" >Heavy</option>
-        </select>
-
-        <br/>
-        Symptoms:
-        <br/>
-        <div className="form-check">
-        <label htmlFor="cramps">Cramps?: </label>
-        <input type="checkbox" name="cramps" value={day.cramps} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="migraine">Migraine/Headache?: </label>
-        <input type="checkbox" name="migraine" value={day.migraine} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="bloating">Bloating?: </label>
-        <input type="checkbox" name="bloating" value={day.bloating} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="emo">Emotionally sensitive?: </label>
-        <input type="checkbox" name="emo" value={day.emo} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="anger">Angry?: </label>
-        <input type="checkbox" name="anger" value={day.anger} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="food">Food cravings?: </label>
-        <input type="checkbox" name="food" value={day.food} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="sex">Sexual cravings?: </label>
-        <input type="checkbox" name="sex" value={day.sex} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="nausea">Nauseated?: </label>
-        <input type="checkbox" name="nausea" value={day.nausea} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="sore">Breast tenderness?: </label>
-        <input type="checkbox" name="sore" value={day.sore} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="fatigue">Fatigue?: </label>
-        <input type="checkbox" name="fatigue" value={day.fatigue} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="aches">Body aches?: </label>
-        <input type="checkbox" name="aches" value={day.aches} onChange={handleChecked}/>
-        </div>
-        <div className="form-check">
-        <label htmlFor="patriarchy">Under the thumb of the Patriarchy? </label>
-        <input type="checkbox" name="patriarchy"  value={day.patriarchy} onChange={handleChecked}/>
-        </div>
-
-        <input type="submit"/>
-      </form>
+      </div>
+    </div>
+    </div>
     </>
   )
 }

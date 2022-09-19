@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Flomo
+### Menstrual Cycle Tracking App  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Made by Joy Houser, Liat Paradise and Isaac Pure   
+      
+[Front End Github](https://github.com/BattyBai/flomo-frontend)    
+      
+[Back End Github](https://github.com/BattyBai/flomo_backend)     
+     
+### Approach Taken
+Initially the group focused on creating an app that would incorporate full CRUD functionality on  a basic level, while also serving as a pragmatic solution to a real problem. We settled on a menstrual tracking app since much of the world’s population experiences menstruation.
+We set out to develop the app using a calendar plug-in, which would allow user to view and input menstrual data on specific dates of the month.  The pursuit of calendar functionality was unsuccessfully completed before the project deadline and the decision was made to move on without it. User authorization was also attempted to allow an individual to view their own personal data, but that too was also removed since we could not make it functional.
+The team met daily via Zoom/Discord for a morning scrum/meeting to update each other on current and future workflows. A daily checkout meeting was also used to provide progress updates to one another.
+Asana was the daily tracker we used to ensure we were all on the same page as far as task deligation and fulfilling requirements. We communicated often to ensure we were all pushing and pulling properly to and from github.
+Bootstrap, MUI and vanilla CSS were used to style the site. Django was used to connect the front end React to the backend postgreSQL database. We employed the use of modals for our Add and Edit functions to keep tastefully organized.   
 
-## Available Scripts
+### User Stories
+User can enter website and click on "Add Flow" at the upper right hand corner. This displays a modal which provides an input form. The user can select whether they are currently menstruating, select a date, and select a variety of symptoms to track the expressions of their cycle. The data they inputted is then displayed on the screen. On each day's data of symptoms, the user can select to edit those symptoms, or select to delete that entire day's symptoms.   
 
-In the project directory, you can run:
+### Technoligies Used
+This website was made with the MERN stack using:   
+* HTML
+* CSS
+* Javascript
+* Bootstrap
+* Django
+* PostgreSQL
+* MUI
+* React
+* Node.js   
 
-### `npm start`
+### Unfinished Functionality
+User authorization/login   
+JWT   
+Calendar plug-in implementation and synergy with current React framework   
+Filtering function by date   
+Scrolling on all modals   
+Having the Add Flow modal display a clear input form, rather than previous inputted symptoms   
+Deployment on Heroku (edited)   
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Future Stretch Goals 
+Provide a predictive functionality, in which the application selects the next expected date of menstruation.   
+The application could alert the user one or two days before their expected menstruation.   

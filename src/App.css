@@ -1,38 +1,161 @@
-.App {
+h4, h5, h6 {
+  color:rgb(135, 2, 89);
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#footer-title {
+  text-align: right;
+  padding-right: 1em;
+}
+
+#names-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 1em;
+  /* padding-bottom: 1em; */
+}
+
+.footer-text {
+  color: white !important;
+}
+
+
+.flomo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  padding: 5px;
+  margin: 5px;
+}
+
+.select-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.select-date {
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  background-color:rgb(220, 148, 196);
+  width: 100%;
+  padding: 2px;
+  color: white;
+  border-radius: 1em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardflex{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap !important;
+  justify-content: space-around;
+  width: 18rem;
+  margin: auto 0;
+  padding: .5em;
+}
+
+.button-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 5px;
+}
+
+.add-flow {
+  background-color: rgb(170, 50, 128) !important;
+  color: white !important;
+}
+.add-flow:hover {
+  background-color: rgb(246, 203, 232) !important;
+  color:white !important;
+}
+
+.card-body {
+  min-height: 670px;
+}
+
+Checkbox {
+  color:rgb(170, 50, 128) !important;
+}
+
+.delete-btn{
+  background-color: rgb(231, 113, 189) !important;
+  color: white !important;
+  border-color: none !important;
+  box-shadow: none !important;
+  outline-color: none !important;
+}
+
+.add {
+  max-height: 3em;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.add:hover {
+  background-color: white !important;
+  color:rgb(135, 2, 89) !important;
+}
+
+Button {
+  background-color:rgb(246, 203, 232) !important;
+  color:rgb(135, 2, 89) !important;
+}
+Button:hover {
+  background-color: rgb(135, 2, 89) !important;
+  color: white !important;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: rgb(114, 1, 75);
   color: white;
+  width: 100vw;
+  padding: 1em;
+  /* z-index: 2; */
 }
 
-.App-link {
-  color: #61dafb;
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  margin-left: 0;
+  background-color: rgb(114, 1, 75);
+  color: white;
+  width: 100vw;
+  padding-bottom: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-flow-box {
+  display: flex;
+  justify-content: right;
 }
+
+footer {
+  background-color:rgb(114, 1, 75) ;
+  margin: 0;
+  padding-bottom: .5em;
+}
+
+
+Box {
+  max-height: 90vh;
+}
+

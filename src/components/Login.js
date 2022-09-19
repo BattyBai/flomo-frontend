@@ -7,7 +7,7 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('')
     const [toggleLogout, setToggleLogout] = useState(false)
     const [currentUser, setCurrentUser] = useState({})
-    
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -43,8 +43,9 @@ const Login = () => {
         }
         setEmail('')
         setPassword('')
-        axios.put(`http://localhost:8000/api/useraccount/{userid}`, userObj).then((response) => {
-            if(response.data.email){
+        axios.put(`http://localhost:8000/api/useraccount/login`, userObj).then((response) => {
+            console.log("res", response);
+            if(response.data){
                 console.log(response);
                 setToggleError(false)
                 setErrorMessage('')
@@ -57,12 +58,12 @@ const Login = () => {
             }
         })
     }
-    
+
     const handleLogout = () => {
         setCurrentUser({})
         handleToggleLogout()
     }
-    
+
     const handleToggleForm = () => {
         setToggleError(false)
         if(toggleLogin === true) {
@@ -71,7 +72,7 @@ const Login = () => {
             setToggleLogin(true)
         }
     }
-    
+
     const handleToggleLogout = () => {
         if(toggleLogout) {
             setToggleLogout(false)
@@ -83,7 +84,7 @@ const Login = () => {
 
 
   return (
-    
+
     <div className="App" style = {{paddingTop: "150px"}}>
             <div>
             {toggleLogout ?
@@ -92,7 +93,7 @@ const Login = () => {
                 {toggleLogin ?
                   //login form
                 <div className="formContainer">
-                    <h1 className='formTitle'>Login Here</h1>
+                    <h1 className='formTitle'>Flomo Login</h1>
                     <form onSubmit={handleLogin} className='inputForm'>
                         <input type='text' placeholder='email' className='textInput' onChange={(event)=> {setEmail(event.target.value)}}/>
                         <input type='password' placeholder='password' className='textInput' onChange={(event)=> {setPassword(event.target.value)}}/>
@@ -123,8 +124,8 @@ const Login = () => {
                 <button onClick={handleToggleForm} className='accountBtn btn btn-outline-primary'>{toggleLogin ? 'New Account?' : 'Login'}</button>
             </div>
             }
-    
-    
+
+
         </div>
         {currentUser.email ?
             <div className='loggedInDiv'>
