@@ -31,7 +31,7 @@ This website was made with the MERN stack using:
 * React
 * Node.js   
 
-##### Unfinished Functionality
+*** Unfinished Functionality ***
 User authorization/login   
 JWT   
 Calendar plug-in implementation and synergy with current React framework   
@@ -40,6 +40,6 @@ Scrolling on all modals
 Having the Add Flow modal display a clear input form, rather than previous inputted symptoms   
 Deployment on Heroku (edited)   
 
-#### Future Stretch Goals
+*** Future Stretch Goals ***
 Provide a predictive functionality, in which the application selects the next expected date of menstruation.   
 The application could alert the user one or two days before their expected menstruation.   
